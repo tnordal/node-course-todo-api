@@ -39,7 +39,6 @@ app.get('/todos/:id', (req, res) => {
     var id = req.params.id;
 
     //Validate id
-        //Send 404 and empty body
     if (!ObjectID.isValid(id)) {
         res.status(404).send();
     }
@@ -53,12 +52,6 @@ app.get('/todos/:id', (req, res) => {
     }, (e) => {
         res.status(400).send();
     });
-
-        // success
-            // if todo send it back
-            // if no todo send empty body and 404
-        // error
-            //400 and send empty body
 });
 
 
